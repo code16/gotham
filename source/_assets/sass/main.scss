@@ -73,8 +73,9 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: url(/assets/images/bg-pattern.png);
-  opacity: .5;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAJElEQVQoU2NkYGD4z4AKGJG5IA4dFKA5AdVKFAdBVaK4iXIFAEiuCAWq9MdHAAAAAElFTkSuQmCC) repeat;
+  background-size: 4px;
+  opacity: .4;
 }
 
 .colored {
