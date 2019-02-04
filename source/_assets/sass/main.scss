@@ -2,126 +2,90 @@
 @import '~bootstrap/scss/bootstrap';
 
 
-.background-pattern {
-  background: url(/assets/images/bg-pattern.png);
-  z-index: 100;
-  opacity: .5;
+.header {
+  margin-bottom: 80px;
 }
 
-.panel {
-  position: absolute;
-  width: 60%;
+.content {
+  padding-top: 100px;
+  padding-bottom: 100px;
   max-width: 800px;
-  top: 100px;
-  left: 25%;
-  z-index: 200;
 }
 
-.panel img {
-  display: block;
+.group {
   margin-bottom: 20px;
 }
 
-h1, h2 {
-  float: left;
-  background: #fff;
-  padding: 1px 5px;
-  margin: 0;
-}
-
-h1 {
+.title {
   font-size: 32px;
   margin-bottom: 10px;
+  &.colored-container {
+    line-height: 1.25;
+  }
 }
 
-h2 {
+.subtitle {
+  @extend .m-0;
   font-size: 16px;
-  clear: left;
-}
-
-.structures {
-  clear: left;
-  margin: 80px 0 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.structures li {
-  width: 45%;
-  float: left;
-  clear: left;
-  margin-bottom: 20px;
-}
-
-.structures li:nth-child(2n+2) {
-  float: right;
-  clear: none;
-}
-
-p {
-  clear: left;
-  line-height: 18px;
-  margin: 0;
-  float: left;
-  background: #000;
-  color: #fff;
-  padding: 1px 5px;
-  font-weight: 600;
-}
-
-p a {
-  color: #fff;
-}
-
-p a:hover {
-  color: #888;
-}
-
-.clearfix:before,
-.clearfix:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
-}
-
-.clearfix:after {
-  clear: both;
-}
-
-.clearfix {
-  *zoom: 1;
-}
-
-@media (max-width: 768px) {
-  #bgvid {
-    display: none;
+  &.colored-container {
+    line-height: 1.35;
   }
 }
 
-@media (max-width: 640px) {
-  .structures li {
-    width: auto;
-    float: none !important;
-    clear: none !important;
-    margin-bottom: 20px;
-    overflow: auto;
+.item {
+  @extend .m-0;
+  &.colored-container {
+    line-height: 1.5;
+  }
+  .colored {
+    padding-top: 2px;
+    padding-bottom: 2px;
   }
 }
 
-@media (max-width: 380px) {
-  .panel {
-    width: 80%;
-    left: 10%;
-  }
-}
-
-video#bgvid {
+.background {
   position: fixed;
-  left: 0;
   top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.background-video {
+  position: absolute;
   min-width: 100%;
   min-height: 100%;
   width: auto;
   height: auto;
-  z-index: -100;
   background-size: cover;
+
+  @supports (object-fit: cover) {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.background-pattern {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(/assets/images/bg-pattern.png);
+  opacity: .5;
+}
+
+.colored {
+  padding: 1px 5px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  &-primary {
+    @extend .bg-primary;
+  }
+  &-secondary {
+    @extend .bg-secondary;
+    @extend .text-primary;
+  }
 }

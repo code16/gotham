@@ -17,10 +17,10 @@ mix.webpackConfig({
 mix.sass('source/_assets/sass/main.scss', 'css')
     .options({
         processCssUrls: false,
-        
+
     })
     .purgeCss({
-        enabled: true,
+        enabled: mix.inProduction(),
         paths: () => glob.sync([
             path.join(__dirname, 'source/**/*.blade.php'),
         ]),
